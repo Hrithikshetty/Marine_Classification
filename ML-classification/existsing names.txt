@@ -1,0 +1,70 @@
+bangus
+big head carp
+black spotted barb
+catfish
+climbing perch
+fourfinger threadfin
+fresherwater eel
+glass perchlet
+goby
+gold fish
+gourami
+grass crap
+green spotted puffer
+indian carp
+indo pacific tarpon
+jaguar fish
+janitor fish
+knifefish
+long snouted pipefish
+mosquito fish
+mudfish
+mullet
+pangasius
+perch
+scat fish
+silver barb
+silver carp
+silver perch
+snakehead
+tenpounder
+tilapia
+
+
+Normal Fish:
+
+Bangus (Milkfish)
+Bighead Carp
+Black Spotted Barb
+Catfish
+Climbing Perch
+Fourfinger Threadfin
+Freshwater Eel
+Glass Perchlet
+Goby
+Goldfish
+Gourami
+Grass Carp
+Indian Carp
+Indo Pacific Tarpon
+Mullet
+Pangasius
+Perch
+Scat Fish
+Silver Barb
+Silver Carp
+Silver Perch
+Tenpounder
+Tilapia
+
+
+Dangerous Fish:
+
+Green Spotted Puffer
+Jaguar Fish
+Janitor Fish
+Knifefish
+Long Snouted Pipefish
+Mosquito Fish
+Mudfish
+Snakehead
