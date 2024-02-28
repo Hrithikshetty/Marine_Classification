@@ -35,6 +35,9 @@ export default function Register() {
       console.error("Sign up failed:", error);
     } finally {
       setIsLoading(false);
+      setUsername("")
+      setEmail("");
+      setPassword("");
     }
   };
 
@@ -45,7 +48,7 @@ export default function Register() {
           <Link href="#">
             <div className="flex items-center space-x-2 cursor-pointer text-white">
               <MountainIcon className="w-8 h-8" />
-              <span className="text-2xl font-bold text-white">Auto-fis</span>
+              <span className="text-2xl font-bold text-white">Auto-Fis</span>
             </div>
           </Link>
         </div>
@@ -101,7 +104,7 @@ export default function Register() {
               <div className="w-full flex items-center justify-center">
                 <p className="text-gray-500 dark:text-gray-400">
                   Already have an account?
-                  <Link className="underline" href="/login">
+                  <Link className="underline" href="/Pages/login">
                     Sign in
                   </Link>
                 </p>

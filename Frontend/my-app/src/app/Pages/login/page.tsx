@@ -30,9 +30,11 @@ export default function Component() {
       }
     } catch (error) {
       console.error("Login failed:", error);
+    } finally {
+      setEmail("");
+      setPassword("");
     }
   };
-
   return (
     <>
       <header className="py-10.5 h-5 lg:py-14.5 bg-black py-4">
