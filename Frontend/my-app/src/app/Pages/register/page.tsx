@@ -18,7 +18,7 @@ export default function Register() {
   const handleSignUp = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/v1/users/register", {
+      const response = await fetch("http://localhost:8080/api/v1/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export default function Register() {
       });
 
       if (response.ok) {
-        router.push("/login"); 
+        router.push("Pages/login"); 
       } else {
         console.error("Sign up failed");
       }

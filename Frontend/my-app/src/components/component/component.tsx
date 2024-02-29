@@ -19,7 +19,7 @@ export function Component() {
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px] md:flex-row justify-center">
-            <Link href="#">
+            <Link href="/Pages/auto-fis-explore">
               <Button className="inline-flex items-center justify-center h-10 px-8 text-white bg-gray-900 rounded-md border border-gray-200 shadow-sm gap-2 transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
                 Get Started
               </Button>
@@ -153,7 +153,6 @@ export function Component() {
           </div>
         </div>
       </div>
-      
     </>
   );
 }
