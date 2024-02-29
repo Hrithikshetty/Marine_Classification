@@ -11,10 +11,11 @@ export default function Component() {
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("/api/v1/users/login", {
+      const response = await fetch("http://localhost:8080/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,13 +25,15 @@ export default function Component() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        router.push("/dashboard");
+        router.push("/");
       } else {
         console.error("Login failed");
       }
+      console.log(response);
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
+      setIsLoading(false);
       setEmail("");
       setPassword("");
     }
@@ -75,9 +78,14 @@ export default function Component() {
                   type="password"
                 />
               </div>
-              <Button className="w-full bg-white" onClick={handleLogin}>
-                Sign In
+              <Button
+                onClick={handleLogin}
+                className="w-full bg-white text-black"
+                disabled={isLoading}
+              >
+                {isLoading ? "Signing Up..." : "Sign Up"}
               </Button>
+              
               <div className="w-full flex items-center justify-center">
                 <p className="text-gray-500 dark:text-gray-400">
                   Don't have an account yet?
