@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-data = pd.read_csv("C:\\Users\\aloky\\OneDrive\\Desktop\\Mini_Project-5th-sem\\Models\\fish dummy .csv")
+data = pd.read_csv("E:\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
 data = data.drop(['Accessibility', 'Popularity'], axis=1)
 
 def haversine(lat1, lon1, lat2, lon2):
