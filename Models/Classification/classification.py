@@ -8,7 +8,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 app = Flask(__name__)
 CORS(app)
 
-model = load_model('C:\\Users\\aloky\\OneDrive\\Desktop\\Mini_Project-5th-sem\\Models\\marine_model.h5')
+model = load_model('E:\\Marine_Classification\\Models\\Classification\\marine_model.h5')
 
 class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Climbing Perch', 'Fourfinger Threadfin', 'Fresherwater Eel', 'Glass Perchlet', 'Goby', 
                'Gold Fish', 'Gourami', 'Grass Crap', 'Green Spotted Puffer', 'Indian Carp', 'Indo Pacific Tarpon', 'Jaguar Fish', 'Janitor Fish', 'Knifefish',
