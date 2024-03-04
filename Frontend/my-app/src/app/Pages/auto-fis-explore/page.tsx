@@ -36,21 +36,25 @@ export default function ImageAnalyzerPage() {
     formData.append("file", image);
 
     try {
-      const response = await fetch("http://localhost:50603/predict", {
-        method: "POST",
-        body: formData,
-      });
+        const response = await fetch("http://localhost:50603/predict", {
+            method: "POST",
+            body: formData,
+        });
 
-      if (response.ok) {
-        const data = await response.json();
-        setPrediction(data.message);
-      } else {
-        console.error("Failed to get prediction");
-      }
+        if (response.ok) {
+            const data = await response.json();
+            setPrediction(data.message);
+            setImageName(data.image); // Assuming setImageName is a function to update image name in the state
+        } else {
+            console.error("Failed to get prediction");
+        }
     } catch (error) {
-      console.error("Error occurred while fetching prediction:", error);
+        console.error("Error occurred while fetching prediction:", error);
     }
-  };
+};
+
+
+
 
   return (
     <>

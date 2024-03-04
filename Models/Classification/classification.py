@@ -8,7 +8,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 app = Flask(__name__)
 CORS(app)
 
-model = load_model('E:\\Marine_Classification\\Models\\Classification\\marine_model.h5')
+model = load_model('C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
 
 class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Climbing Perch', 'Fourfinger Threadfin', 'Fresherwater Eel', 'Glass Perchlet', 'Goby', 
                'Gold Fish', 'Gourami', 'Grass Crap', 'Green Spotted Puffer', 'Indian Carp', 'Indo Pacific Tarpon', 'Jaguar Fish', 'Janitor Fish', 'Knifefish',
@@ -19,8 +19,13 @@ class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Clim
 def index():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST', 'OPTIONS'])  # Allow OPTIONS method
 def predict():
+    if request.method == 'OPTIONS':  # Handle preflight request
+        response = jsonify({'message': 'CORS preflight request successful'})
+        response.headers.add('Access-Control-Allow-Methods', 'POST')
+        return response
+
     file = request.files['file']
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
     opencv_image = cv2.imdecode(file_bytes, 1)
@@ -31,6 +36,8 @@ def predict():
     y_pred = model.predict(opencv_image)
     result = class_names[np.argmax(y_pred)]
 
-    return jsonify({"message": result})
+    # Return both the predicted class name and the image file
+    return jsonify({"message": result, "image": file.filename})
+
 if __name__ == '__main__':
     app.run(debug=True, port=50603)
