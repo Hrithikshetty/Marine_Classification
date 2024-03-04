@@ -43,6 +43,7 @@ export default function Component() {
       <header className="py-10.5 h-5 lg:py-14.5 bg-black py-4">
         <div className="container grid items-center gap-4 px-4 lg:gap-8 lg:px-6 xl:px-8">
           <Link href="#">
+            
             <div className="flex items-center space-x-2 cursor-pointer text-white">
               <MountainIcon className="w-8 h-8" />
               <span className="text-2xl font-bold text-white">Auto-fis</span>
@@ -60,7 +61,7 @@ export default function Component() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-                  className="rounded-white text-white"
+                  className="rounded-white text-black"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -72,6 +73,7 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
+                  className="text-black"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required

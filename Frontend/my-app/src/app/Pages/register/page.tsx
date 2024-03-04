@@ -65,7 +65,7 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="username">Username</Label>
                 <Input
-                  className="bg-black"
+                  className="text-black"
                   id="username"
                   placeholder="Enter your username"
                   required
@@ -76,6 +76,7 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="email">Email</Label>
                 <Input
+                  className="text-black"
                   id="email"
                   placeholder="Email"
                   required
@@ -87,6 +88,7 @@ export default function Register() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   placeholder="Password"
+                  className="text-black"
                   id="password"
                   required
                   type="password"

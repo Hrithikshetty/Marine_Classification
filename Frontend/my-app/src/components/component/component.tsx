@@ -1,20 +1,24 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import home from "../../../public/home1.jpg";
+import "./app.css"
+
 import Navbar from "./navbar";
 
 export function Component() {
   return (
     <>
       <Navbar />
-      <div className="py-12 lg:py-16 bg-black">
+      <div className="py-28 object-none room h-lvh bg-cover  cursor-pointer filter bg-black bg-image" style={{backgroundImage: `url('/home1.jpg')`}}>
         <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h1 className="text-4xl text-white font-bold tracking-tighter sm:text-5xl md:text-6xl">
               Marine Fish Classification
             </h1>
-            <p className="mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="mx-auto text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Explore the fascinating world of marine fish. Let's dive in!
             </p>
           </div>
@@ -27,7 +31,6 @@ export function Component() {
           </div>
         </div>
       </div>
-
       <section className="bg-black text-white w-full py-12 flex items-center justify-center md:py-24 lg:py-32">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:gap-8 md:px-6 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="space-y-4">
@@ -36,8 +39,7 @@ export function Component() {
                 Species Diversity
               </h2>
               <p className="mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Explore the incredible variety of marine fish species, from
-                colorful reef dwellers to majestic pelagic swimmers.
+              Analyze an Fish image with a pre-trained machine learning model.
               </p>
               <Link href="/Pages/auto-fis-explore">
               <Button className="bg-white text-black inline-flex items-center justify-center h-10 px-8 rounded-md border border-gray-200 shadow-sm gap-2 transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
@@ -51,7 +53,7 @@ export function Component() {
               alt="Species Diversity"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="250"
-              src="/placeholder.svg"
+              src="https://media.istockphoto.com/id/472563478/photo/underwater-world-with-corals-and-tropical-fish.jpg?s=612x612&w=0&k=20&c=W15vZgkJE5wmgrt2WY43-fS_whn32ouMc8wT18olEjk="
               width="500"
             />
           </div>
@@ -76,7 +78,7 @@ export function Component() {
               alt="Habitats"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="250"
-              src="/placeholder.svg"
+              src="https://media.istockphoto.com/id/153971297/photo/coral-reef.jpg?s=612x612&w=0&k=20&c=re5P4n9C_ocdk4F8cQ4M-GdyIvkUByy_gODxDcGdTVs="
               width="500"
             />
           </div>
@@ -101,7 +103,7 @@ export function Component() {
               alt="Behavior and Adaptations"
               className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
               height="250"
-              src="/placeholder.svg"
+              src="https://media.istockphoto.com/id/178840843/photo/green-sea-turtle-swimming-underwater.jpg?s=612x612&w=0&k=20&c=dLvQMzJ8rQjMmIjcmDwKOq9Nu17QDDUZb9bwJe8d9a4="
               width="500"
             />
           </div>

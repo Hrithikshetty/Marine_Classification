@@ -1,0 +1,6 @@
+.room{
+    box-shadow: inset 0px 10px 200px 20px #000, inset 0px 20px 200px 20px #000;
+}
+
+
+/* lg:py-transition-all duration-300 filter grayscale hover:grayscale-0 */
