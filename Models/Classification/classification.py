@@ -6,7 +6,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "http://localhost:3000"}})  # Allow requests from http://localhost:3000
+CORS(app, resources={r"/predict": {"origins": "*"}})
+
 
 
 model = load_model('C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
@@ -20,15 +21,16 @@ class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Clim
 def index():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST', 'OPTIONS'])  # Allow OPTIONS method
+@app.route('/predict', methods=['POST', 'OPTIONS'])  
 def predict():
     if request.method == 'OPTIONS':
         response = jsonify({'message': 'CORS preflight request successful'})
         response.headers.add('Access-Control-Allow-Methods', 'POST')
         return response
 
-    file = request.files.get('file')  # Use request.files.get() instead of request.files[]
+    file = request.files['file'] 
     if not file:
+        print("not found")
         return jsonify({'error': 'No file found in the request'}), 400
 
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
@@ -41,12 +43,14 @@ def predict():
     result = class_names[np.argmax(y_pred)]
 
     # Return both the predicted class name and the image file
-    response = jsonify({"message": result, "image": file.filename})
+    
     response.headers.add('Access-Control-Allow-Origin', '*') 
-    print(response) # Allow all origins
+    response = jsonify({"message": result})
+    # print(response) # Allow all origins
     # response="hello"
-    response = jsonify({'prediction': prediction})
+    # response = jsonify({'prediction': prediction})
     return response
+    # print(response)
 
 
 if __name__ == '__main__':

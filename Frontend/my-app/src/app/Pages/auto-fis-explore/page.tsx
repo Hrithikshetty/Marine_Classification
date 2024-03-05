@@ -36,18 +36,20 @@ export default function ImageAnalyzerPage() {
     }
 
     const formData = new FormData();
-    formData.append("file", image);
+    formData.append('file', image); 
 
     try {
         const response = await fetch("http://localhost:50603/predict", {
             method: "POST",
             body: formData,
+            headers: {
+                "Content-Type": "multipart/form-data" 
+            }
         });
 
         if (response.ok) {
             const data = await response.json();
             setPrediction(data.message);
-            // setImage(data.image); // Assuming setImage is a function to update the image in the state
         } else {
             console.error("Failed to get prediction:", response.statusText);
         }
