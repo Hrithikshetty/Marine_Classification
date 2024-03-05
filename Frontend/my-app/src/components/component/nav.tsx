@@ -18,17 +18,18 @@ export function Navbar() {
       <div className="ml-auto flex gap-2 hover:bg-white hover:text-black">
         {isLoggedIn ? (
           <Button onClick={handleLogout} variant="outline">
-            Log Out
+            Sign Up
           </Button>
         ) : (
-          <Link href="Pages/login">
-            <Button variant="outline">Sign Up</Button>
+          <Link href="/">
+            <Button variant="outline">Log Out</Button>
           </Link>
         )}
       </div>
     </header>
   );
 }
+
 
 interface MountainIconProps extends React.SVGProps<SVGSVGElement> {}
 

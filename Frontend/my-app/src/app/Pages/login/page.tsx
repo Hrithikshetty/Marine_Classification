@@ -29,9 +29,9 @@ export default function Component() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        router.push("/");
+        router.push("/home");
         setMessage("Login successful");
-        setIsLoginedIn(true); // Set login status to true
+        setIsLoginedIn(true);
       } else {
         setError("Login failed. Please check your credentials.");
       }

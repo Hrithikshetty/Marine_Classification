@@ -4,7 +4,7 @@ import cv2
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-model = load_model('C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
+model = load_model('C:\\Users\\mbala\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
 
 class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Climbing Perch', 'Fourfinger Threadfin', 'Fresherwater Eel', 'Glass Perchlet', 'Goby', 
                'Gold Fish', 'Gourami', 'Grass Crap', 'Green Spotted Puffer', 'Indian Carp', 'Indo Pacific Tarpon', 'Jaguar Fish', 'Janitor Fish', 'Knifefish',
@@ -13,10 +13,10 @@ class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Clim
 
 dangerous_species = ['Green Spotted Puffer', 'Jaguar Fish', 'Janitor Fish', 'Knifefish', 'Long Snouted Pipefish', 'Mosquito Fish', 'Mudfish', 'Snakehead']
 
-st.title('Explore Fishes')
-st.markdown('Upload an image of the fish')
+st.title('Image Analyzer')
+st.markdown('Analyze an Fish image with a pre-trained machine learning')
 
-fish_image = st.file_uploader("Choose an image", type='jpg')
+fish_image = st.file_uploader("Choose image", type='jpg')
 
 if fish_image is not None:
     st.image(fish_image, caption='Selected Image', use_column_width=True)

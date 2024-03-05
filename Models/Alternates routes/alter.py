@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from math import radians, sin, cos, sqrt, atan2
 
-data = pd.read_csv("C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
+data = pd.read_csv("C:\\Users\\mbala\\OneDrive\\Desktop\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
 data = data.drop(['Accessibility', 'Popularity'], axis=1)
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -35,7 +35,8 @@ def find_nearest_places(reference_place, places, fish_species):
     return places_with_distances[1:6]
 
 def main():
-    st.title('Alternate Routes')
+    st.title('Find Fish')
+    st.markdown('Enter your location and the type of fish you want to find.')
 
     user_location = st.text_input('Enter your Current location:')
     user_fish_species = st.text_input('Enter the fish species you are looking for:')
