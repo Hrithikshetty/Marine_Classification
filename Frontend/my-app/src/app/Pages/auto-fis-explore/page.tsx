@@ -30,7 +30,10 @@ export default function ImageAnalyzerPage() {
   };
 
   const handleSubmit = async () => {
-    if (!image) return;
+    if (!image) {
+        console.error("No image selected");
+        return;
+    }
 
     const formData = new FormData();
     formData.append("file", image);
@@ -44,15 +47,14 @@ export default function ImageAnalyzerPage() {
         if (response.ok) {
             const data = await response.json();
             setPrediction(data.message);
-            setImageName(data.image); // Assuming setImageName is a function to update image name in the state
+            // setImage(data.image); // Assuming setImage is a function to update the image in the state
         } else {
-            console.error("Failed to get prediction");
+            console.error("Failed to get prediction:", response.statusText);
         }
     } catch (error) {
         console.error("Error occurred while fetching prediction:", error);
     }
 };
-
 
 
 
