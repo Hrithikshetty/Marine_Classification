@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
+
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "*"}})
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 
 
@@ -22,6 +25,8 @@ def index():
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST', 'OPTIONS'])  
+@cross_origin()
+
 def predict():
     if request.method == 'OPTIONS':
         response = jsonify({'message': 'CORS preflight request successful'})
@@ -44,7 +49,7 @@ def predict():
 
     # Return both the predicted class name and the image file
     
-    response.headers.add('Access-Control-Allow-Origin', '*') 
+    # response.headers.add('Access-Control-Allow-Origin', '*') 
     response = jsonify({"message": result})
     # print(response) # Allow all origins
     # response="hello"
