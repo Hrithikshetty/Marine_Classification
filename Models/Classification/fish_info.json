@@ -1,18 +1,4 @@
-import streamlit as st
-import numpy as np
-import cv2
-from tensorflow.keras.models import load_model
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-
-model = load_model('C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
-
-class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Climbing Perch', 'Fourfinger Threadfin', 'Fresherwater Eel', 'Glass Perchlet', 'Goby', 
-               'Gold Fish', 'Gourami', 'Grass Crap', 'Green Spotted Puffer', 'Indian Carp', 'Indo Pacific Tarpon', 'Jaguar Fish', 'Janitor Fish', 'Knifefish',
-               'Long Snouted Pipefish', 'Mosquito Fish', 'Mudfish', 'Mullet', 'Pangasius', 'Perch', 'Scat Fish', 'Silver Barb', 'Silver Carp', 'Silver Perch', 
-               'Snakehead', 'Tenpounder', 'Tilapia']
-
-fish_info = {
-     
+ {
     'Bangus': 'Bangus, also known as milkfish, is the national fish of the Philippines. It is prized for its tender, flavorful flesh and is commonly used in various Filipino dishes such as sinigang, relleno, and daing. Bangus is often grilled, fried, or cooked in soups and stews. It is a versatile fish that can be prepared in numerous ways, including marinating, smoking, and baking. Bangus is rich in protein and healthy fats, making it a nutritious addition to any diet.',
 
     'Big Head Carp': 'Bighead carp is a species of freshwater fish native to Asia. It is known for its large head and is often farmed for food due to its fast growth rate and high fecundity. Bighead carp is valued for its firm, white flesh and is commonly used in Asian cuisine, especially in dishes such as steamed fish and fish congee. The fish has a mild, slightly sweet flavor that pairs well with various seasonings and sauces. It can be prepared in a variety of ways, including steaming, frying, and grilling.',
@@ -21,7 +7,7 @@ fish_info = {
 
     'Catfish': 'Catfish are a diverse group of ray-finned fish known for their prominent barbels, which resemble a cat\'s whiskers. They are found in freshwater environments worldwide and are often farmed for food due to their fast growth and hardiness. Catfish have a mild, sweet flavor and are used in a variety of dishes, including soups, stews, and fried preparations. They are a popular choice for deep-frying due to their firm texture and ability to hold up well to breading and frying. Catfish are also a good source of essential nutrients, including protein, vitamins, and minerals.',
 
-    'Climbing Perch': 'The climbing perch is a species of freshwater fish found in Asia. It is known for its ability to climb out of water and survive in moist environments for short periods. Climbing perch are small, carnivorous fish that feed on insects, crustaceans, and small fish. They have a unique anatomical structure that allows them to breathe air, enabling them to survive in oxygen-depleted environments such as rice paddies and swamps. Climbing perch are often found in shallow, stagnant waters and can tolerate a wide range of environmental conditions.',
+    'Climbing Perch': 'The climbing perch is a species of freshwater fish found in Asia. It is known for its ability to 'climb' out of water and survive in moist environments for short periods. Climbing perch are small, carnivorous fish that feed on insects, crustaceans, and small fish. They have a unique anatomical structure that allows them to breathe air, enabling them to survive in oxygen-depleted environments such as rice paddies and swamps. Climbing perch are often found in shallow, stagnant waters and can tolerate a wide range of environmental conditions.',
 
     'Fourfinger Threadfin': 'The fourfinger threadfin, also known as Indian salmon, is a species of fish found in coastal waters of the Indian Ocean and Western Pacific Ocean. It is known for its elongated body and distinctive four finger-like rays on its pectoral fins. Fourfinger threadfins are highly valued for their delicate, flavorful flesh and are often served grilled, steamed, or fried in Asian cuisine. They are popular among anglers for their sportfishing qualities, as they are known to put up a strong fight when hooked. Fourfinger threadfins are also an important commercial species, especially in Southeast Asia, where they are harvested for their meat.',
 
@@ -75,42 +61,3 @@ fish_info = {
 
     'Tilapia': 'Tilapia are a group of freshwater fish native to Africa and the Middle East. They are characterized by their mild, white flesh and are valued for their versatility in culinary preparations. Tilapia are popular in aquaculture due to their fast growth rate, tolerance to a wide range of environmental conditions, and high reproductive capacity. They are commonly used in various cuisines around the world and can be prepared in numerous ways, including grilling, frying, baking, and steaming. Tilapia are also a good source of essential nutrients, including protein, vitamins, and minerals.'
 }
-
-
-dangerous_species = ['Green Spotted Puffer', 'Jaguar Fish', 'Janitor Fish', 'Knifefish', 'Long Snouted Pipefish', 'Mosquito Fish', 'Mudfish', 'Snakehead']
-
-st.title('Explore Fishes')
-
-fish_image = st.file_uploader("Choose an image", type='jpg')
-
-if fish_image is not None:
-    st.markdown('<div style="text-align:center">', unsafe_allow_html=True)
-    st.image(fish_image, caption='Selected Image', width=350, output_format="JPEG", channels="BGR")  
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    submit = st.button('Predict')
-
-    if submit:
-        file_bytes = np.asarray(bytearray(fish_image.read()), dtype=np.uint8)
-        opencv_image = cv2.imdecode(file_bytes, 1)
-        opencv_image = cv2.resize(opencv_image, (224, 224))
-        opencv_image = preprocess_input(opencv_image) 
-        opencv_image = np.expand_dims(opencv_image, axis=0)
-
-        y_pred = model.predict(opencv_image)
-        predicted_class_index = np.argmax(y_pred)
-        result = class_names[predicted_class_index]
-
-        st.title(result)
-
-        if result in dangerous_species:
-            st.warning(f'The predicted species "{result}" is considered dangerous.')
-        else:
-            st.info(f'The predicted species "{result}" is not considered dangerous.')
-
-        # Display information about the predicted fish species
-        if result in fish_info:
-            st.write("Information about the predicted fish species:")
-            st.write(fish_info[result])
-        else:
-            st.write("No information available for this fish species.")
