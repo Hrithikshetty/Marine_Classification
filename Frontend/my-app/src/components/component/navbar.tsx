@@ -1,14 +1,14 @@
 "use client"
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
 import Link from "next/link";
+import { Button } from '../ui/button';
+import { AuthProvider, useAuth } from '../../app/auth/AuthContext';
 
 export function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const handleLogout = () => {
-    // Perform logout logic
-    setIsLoggedIn(false);
+    setIsLoggedIn(false); 
   };
 
   return (
@@ -30,8 +30,6 @@ export function Navbar() {
   );
 }
 
-
-
 interface MountainIconProps extends React.SVGProps<SVGSVGElement> {}
 
 function MountainIcon(props: MountainIconProps) {
@@ -52,5 +50,3 @@ function MountainIcon(props: MountainIconProps) {
     </svg>
   );
 }
-
-export default Navbar;

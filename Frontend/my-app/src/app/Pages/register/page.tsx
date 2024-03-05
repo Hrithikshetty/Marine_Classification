@@ -10,10 +10,12 @@ import "../app.css";
 
 export default function Register() {
   const router = useRouter();
-  const [username, setUsername] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSignUp = async () => {
     setIsLoading(true);
@@ -27,15 +29,26 @@ export default function Register() {
       });
 
       if (response.ok) {
-        router.push("Pages/login"); 
+        setSuccessMessage("Sign up successful. Redirecting to login page...");
+        setTimeout(() => {
+          setSuccessMessage("");
+          router.push("/Pages/login");
+        }, 2000);
       } else {
-        console.error("Sign up failed");
+        setErrorMessage("Sign up failed. Please try again.");
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 2000);
       }
     } catch (error) {
       console.error("Sign up failed:", error);
+      setErrorMessage("An error occurred. Please try again later.");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
     } finally {
       setIsLoading(false);
-      setUsername("")
+      setUsername("");
       setEmail("");
       setPassword("");
     }
@@ -65,7 +78,7 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="username">Username</Label>
                 <Input
-                  className="text-black"
+                  className="bg-white text-black"
                   id="username"
                   placeholder="Enter your username"
                   required
@@ -76,7 +89,7 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="email">Email</Label>
                 <Input
-                  className="text-black"
+                  className="bg-white text-black"
                   id="email"
                   placeholder="Email"
                   required
@@ -88,7 +101,7 @@ export default function Register() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   placeholder="Password"
-                  className="text-black"
+                  className="bg-white text-black"
                   id="password"
                   required
                   type="password"
@@ -115,6 +128,20 @@ export default function Register() {
           </div>
         </div>
       </div>
+      {successMessage && (
+        <div className="fixed inset-0 ">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <p className="text-green-500">{successMessage}</p>
+          </div>
+        </div>
+      )}
+      {errorMessage && (
+        <div className="fixed inset-0 ">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <p className="text-red-500">{errorMessage}</p>
+          </div>
+        </div>
+      )}
     </>
   );
 }

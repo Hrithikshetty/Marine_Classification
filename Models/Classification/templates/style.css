@@ -1,0 +1,67 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: red;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  margin-right: 5px;
+}
+
+.logo-text {
+  font-size: 20px;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form input[type="file"] {
+  display: none;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.predict {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}

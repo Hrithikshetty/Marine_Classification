@@ -3,18 +3,31 @@ import React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import home from "../../../public/home1.jpg";
+
+import { AuthProvider, useAuth } from '../../app/auth/AuthContext';
+// import home from "../../../public/home.jpg";
 import "./app.css"
+import { Navbar}  from "./navbar";
 
-import Navbar from "./navbar";
 
+type ComponentProps = {
+  isLoggedIn: boolean;
+  // Add other props if needed
+};
 export function Component() {
+
+    const { isLoggedIn } = useAuth();
+    const pageProps: ComponentProps = { isLoggedIn };
+  
+
   return (
     <>
+    <AuthProvider>
       <Navbar />
-      <div className="py-28 object-none room h-lvh bg-cover  cursor-pointer filter bg-black bg-image" style={{backgroundImage: `url('/home1.jpg')`}}>
-        <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
-          <div className="space-y-3">
+    </AuthProvider>
+      <div className="w-full h-full flex item-center justify-center object-none room aspect-[2/1] overflow-hidden object-contain object-center bg-cover md:py-24 lg:py-32 cursor-pointer filter bg-image" style={{backgroundImage: `url('/home1.jpeg')`}}>
+        <div className="container mx-auto grid items-center justify-center  text-center md:px-6">
+          <div className="">
             <h1 className="text-4xl text-white font-bold tracking-tighter sm:text-5xl md:text-6xl">
               Marine Fish Classification
             </h1>
@@ -22,7 +35,7 @@ export function Component() {
               Explore the fascinating world of marine fish. Let's dive in!
             </p>
           </div>
-          <div className="flex flex-col gap-2 min-[400px] md:flex-row justify-center">
+          <div className="flex flex-col  min-[400px] md:flex-row justify-center">
             <Link href="/Pages/auto-fis-explore">
               <Button className="bg-white text-black inline-flex items-center justify-center h-10 px-8 rounded-md border border-gray-200 shadow-sm gap-2 transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
                 Get Started
@@ -132,7 +145,7 @@ export function Component() {
                 placeholder="Enter your email"
                 type="email"
               />
-              <Button className="bg-black border-white text-white w-20 h-29" size="sm">
+              <Button className="bg-black border-white text-white w-20 h-29 hover:bg-white hover:text-black" variant="outline" size="sm">
                 Sign Up
               </Button>
             </div>
