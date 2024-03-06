@@ -53,7 +53,7 @@ import React from "react";
 const Scan = () => {
   return (
     <div className="text-2xl font-bold">
-      <iframe src="http://localhost:8053/" width="1000" height="600"></iframe>
+      <iframe src="http://localhost:8053/" width="100%" height="745px"></iframe>
     </div>
   );
 };

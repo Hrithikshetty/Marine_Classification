@@ -4,17 +4,16 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import { AuthProvider, useAuth } from '../../app/auth/AuthContext';
+import { AuthProvider, useAuth } from '../auth/AuthContext';
 // import home from "../../../public/home.jpg";
 import "./app.css"
-import { Navbar}  from "./navbar";
+import { Navbar}  from "../../components/component/nav";
 
 
 type ComponentProps = {
   isLoggedIn: boolean;
-  // Add other props if needed
 };
-export function Component() {
+export default function HomePage() {
 
     const { isLoggedIn } = useAuth();
     const pageProps: ComponentProps = { isLoggedIn };
@@ -35,7 +34,7 @@ export function Component() {
               Explore the fascinating world of marine fish. Let's dive in!
             </p>
             <div className="flex flex-col min-[400px] md:flex-row justify-center">
-            <Link href="/Pages/login">
+            <Link href="/Pages/auto-fis-explore">
               <Button className="bg-white text-black inline-flex getstarted items-center justify-center h-10 px-8 rounded-md border border-gray-200 shadow-sm gap-2 transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
                 Get Started
               </Button>
@@ -55,7 +54,7 @@ export function Component() {
               <p className="mx-auto pb-10 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Enter your location and the type of fish you want to find.
               </p>
-              <Link href="/Pages/login">
+              <Link href="/Pages/find-fish">
               <Button className="bg-white text-black  inline-flex items-center justify-center h-10 px-8 rounded-md border border-gray-200 shadow-sm gap-2 transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
                 Get Started
               </Button>

@@ -12,9 +12,13 @@ export default function Component() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [message, setMessage] = React.useState<string | null>(null);
+  const [isLoginedIn, setIsLoginedIn] = React.useState(false); // Track login status
 
   const handleLogin = async () => {
     try {
+      setIsLoading(true);
       const response = await fetch("http://localhost:8080/api/v1/users/login", {
         method: "POST",
         headers: {
@@ -25,25 +29,27 @@ export default function Component() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        router.push("/");
+        router.push("/home");
+        setMessage("Login successful");
+        setIsLoginedIn(true);
       } else {
-        console.error("Login failed");
+        setError("Login failed. Please check your credentials.");
       }
-      console.log(response);
     } catch (error) {
       console.error("Login failed:", error);
+      setError("An error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
       setEmail("");
       setPassword("");
     }
   };
+
   return (
     <>
       <header className="py-10.5 h-5 lg:py-14.5 bg-black py-4">
         <div className="container grid items-center gap-4 px-4 lg:gap-8 lg:px-6 xl:px-8">
           <Link href="#">
-            
             <div className="flex items-center space-x-2 cursor-pointer text-white">
               <MountainIcon className="w-8 h-8" />
               <span className="text-2xl font-bold text-white">Auto-fis</span>
@@ -51,7 +57,7 @@ export default function Component() {
           </Link>
         </div>
       </header>
-      <div className="min-h-screen flex items-center justify-center  bg-black">
+      <div className="min-h-screen flex items-center justify-center bg-black">
         <div className="w-full py-6 space-y-4 md:py-12 lg:space-y-6 xl:space-y-8 rounded-lg">
           <div className="mx-auto max-w-sm px-4 space-y-4">
             <div className="space-y-2 text-center">
@@ -61,7 +67,7 @@ export default function Component() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-                  className="rounded-white text-black"
+                  className="rounded-white bg-white text-black"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -73,7 +79,7 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
-                  className="text-black"
+                  className="bg-white text-black"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
@@ -100,6 +106,26 @@ export default function Component() {
           </div>
         </div>
       </div>
+      {error && (
+        <div className="fixed inset-0 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <p className="text-red-500">{error}</p>
+            <button onClick={() => setError(null)} className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {message && (
+        <div className="fixed inset-0 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <p className="text-green-500">{message}</p>
+            <button onClick={() => setMessage(null)} className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
