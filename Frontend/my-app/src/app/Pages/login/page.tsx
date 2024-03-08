@@ -61,7 +61,11 @@ export default function Component() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
+<<<<<<< Updated upstream
                   className="rounded-white text-black"
+=======
+                  className="text-white"
+>>>>>>> Stashed changes
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -73,7 +77,11 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
+<<<<<<< Updated upstream
                   className="text-black"
+=======
+                  className=" text-white"
+>>>>>>> Stashed changes
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required

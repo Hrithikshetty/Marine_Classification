@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Component() {
   return (
+<<<<<<< Updated upstream
     <div className="flex flex-col h-screen bg-black text-white">
       <header className="flex items-center h-14 px-4 border-b sm:h-16 lg:px-6">
         <div className="flex items-center space-x-4">
@@ -23,6 +24,10 @@ export default function Component() {
           <Button className="w-full">Submit</Button>
         </div>
       </main>
+=======
+    <div className="text-2xl font-bold">
+      <iframe src="http://localhost:8053/" width="100%" height="930px"></iframe>
+>>>>>>> Stashed changes
     </div>
   )
 }
