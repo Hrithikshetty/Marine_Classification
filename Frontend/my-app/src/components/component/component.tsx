@@ -142,13 +142,22 @@ export function Component() {
                 Email
               </label>
               <Input
-                className="w-full flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
+                className="w-full text-white flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
                 id="homepage-email"
                 placeholder="Enter your email"
                 type="email"
               />
+<<<<<<< HEAD
               <Button className="bg-black border-white text-white w-20 h-29 hover:bg-white hover:text-black" variant="outline" size="sm">
+=======
+<<<<<<< Updated upstream
+              <Button className="bg-black border-white text-white w-20 h-29" size="sm">
+>>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
                 Sign Up
+=======
+              <Button className="bg-black border-white text-white w-20 h-29 hover:bg-white hover:text-black" variant="outline" size="sm">
+                Subscribe
+>>>>>>> Stashed changes
               </Button>
             </div>
           </div>

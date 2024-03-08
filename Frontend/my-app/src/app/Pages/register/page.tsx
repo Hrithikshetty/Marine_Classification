@@ -78,7 +78,15 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="username">Username</Label>
                 <Input
+<<<<<<< HEAD
                   className="bg-white text-black"
+=======
+<<<<<<< Updated upstream
+                  className="text-black"
+=======
+                  className="text-white"
+>>>>>>> Stashed changes
+>>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
                   id="username"
                   placeholder="Enter your username"
                   required
@@ -89,7 +97,15 @@ export default function Register() {
               <div className="space-y-2 text-white">
                 <Label htmlFor="email">Email</Label>
                 <Input
+<<<<<<< HEAD
                   className="bg-white text-black"
+=======
+<<<<<<< Updated upstream
+                  className="text-black"
+=======
+                  className="text-white"
+>>>>>>> Stashed changes
+>>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
                   id="email"
                   placeholder="Email"
                   required
@@ -101,7 +117,15 @@ export default function Register() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   placeholder="Password"
+<<<<<<< HEAD
                   className="bg-white text-black"
+=======
+<<<<<<< Updated upstream
+                  className="text-black"
+=======
+                  className=" text-white"
+>>>>>>> Stashed changes
+>>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
                   id="password"
                   required
                   type="password"

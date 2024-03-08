@@ -187,7 +187,15 @@ import React from "react";
 const Scan = () => {
   return (
     <div className="text-2xl font-bold">
+<<<<<<< HEAD
       <iframe src="http://localhost:8501/" width="100%" height="745px" ></iframe>
+=======
+<<<<<<< Updated upstream
+      <iframe src="http://127.0.0.1:50603/" width="800" height="600"></iframe>
+=======
+      <iframe src="http://localhost:8501/" width="100%" height="930px" ></iframe>
+>>>>>>> Stashed changes
+>>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
     </div>
   );
 };
