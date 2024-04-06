@@ -2,11 +2,11 @@ import pandas as pd
 import streamlit as st
 from math import radians, sin, cos, sqrt, atan2
 
-<<<<<<< HEAD
-data = pd.read_csv("C:\\Users\\mbala\\OneDrive\\Desktop\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
-=======
+
+# data = pd.read_csv("C:\\Users\\mbala\\OneDrive\\Desktop\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
+
 data = pd.read_csv("C:\\Users\\aloky\\OneDrive\\Desktop\\Marine_Classification\\Models\\Alternates routes\\fish dummy .csv")
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+
 data = data.drop(['Accessibility', 'Popularity'], axis=1)
 
 def haversine(lat1, lon1, lat2, lon2):
