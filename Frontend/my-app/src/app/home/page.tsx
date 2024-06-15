@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { AuthProvider, useAuth } from '../auth/AuthContext';
 // import home from "../../../public/home.jpg";
 import "./app.css"
@@ -141,21 +140,17 @@ export default function HomePage() {
                 Email
               </label>
               <Input
-<<<<<<< HEAD
-                className="w-full flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
-=======
-                className="w-full text-white flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+       className="w-full  flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
                 id="homepage-email"
                 placeholder="Enter your email"
                 type="email"
               />
               <Button className="bg-black border-white text-white w-20 h-29 hover:bg-white hover:text-black" variant="outline" size="sm">
-<<<<<<< HEAD
+
                 Sign Up
-=======
+
               Subscribe
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+
               </Button>
             </div>
           </div>

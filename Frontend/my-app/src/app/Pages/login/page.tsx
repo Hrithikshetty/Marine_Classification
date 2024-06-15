@@ -67,9 +67,7 @@ export default function Component() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-                  className="rounded-white bg-white text-black"
-                  className="rounded-white text-black"
-                  className="text-white"
+                  className="rounded-white bg-white text-white"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -81,7 +79,7 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
-                  className="bg-white text-black "
+                  className="bg-white text-white "
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
