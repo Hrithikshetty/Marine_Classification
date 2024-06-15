@@ -67,15 +67,9 @@ export default function Component() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-<<<<<<< HEAD
                   className="rounded-white bg-white text-black"
-=======
-<<<<<<< Updated upstream
                   className="rounded-white text-black"
-=======
                   className="text-white"
->>>>>>> Stashed changes
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -87,15 +81,7 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
-<<<<<<< HEAD
-                  className="bg-white text-black"
-=======
-<<<<<<< Updated upstream
-                  className="text-black"
-=======
-                  className=" text-white"
->>>>>>> Stashed changes
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+                  className="bg-white text-black "
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
