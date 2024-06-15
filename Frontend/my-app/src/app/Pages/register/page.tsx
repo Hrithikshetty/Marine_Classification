@@ -75,18 +75,10 @@ export default function Register() {
               </h1>
             </div>
             <div className="space-y-4 text-white">
-              <div className="space-y-2 text-white">
+              <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <Input
-<<<<<<< HEAD
-                  className="bg-white text-black"
-=======
-<<<<<<< Updated upstream
-                  className="text-black"
-=======
-                  className="text-white"
->>>>>>> Stashed changes
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+                  className="bg-white text-white"
                   id="username"
                   placeholder="Enter your username"
                   required
@@ -94,20 +86,12 @@ export default function Register() {
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
-              <div className="space-y-2 text-white">
+              <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-<<<<<<< HEAD
-                  className="bg-white text-black"
-=======
-<<<<<<< Updated upstream
-                  className="text-black"
-=======
-                  className="text-white"
->>>>>>> Stashed changes
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+                  className="bg-white text-white"
                   id="email"
-                  placeholder="Email"
+                  placeholder="Enter your email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -116,17 +100,9 @@ export default function Register() {
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <Input
-                  placeholder="Password"
-<<<<<<< HEAD
-                  className="bg-white text-black"
-=======
-<<<<<<< Updated upstream
-                  className="text-black"
-=======
-                  className=" text-white"
->>>>>>> Stashed changes
->>>>>>> d904c7a1a29692e3d72a5957115f58fb78fb18bc
+                  className="bg-white text-white"
                   id="password"
+                  placeholder="Enter your password"
                   required
                   type="password"
                   value={password}
@@ -153,14 +129,14 @@ export default function Register() {
         </div>
       </div>
       {successMessage && (
-        <div className="fixed inset-0 ">
+        <div className="fixed inset-0 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-green-500">{successMessage}</p>
           </div>
         </div>
       )}
       {errorMessage && (
-        <div className="fixed inset-0 ">
+        <div className="fixed inset-0 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-red-500">{errorMessage}</p>
           </div>
