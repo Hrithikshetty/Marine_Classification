@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8a56bc7e8e816bf0d4cf6997f043f2a3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8a56bc7e8e816bf0d4cf6997f043f2a3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8a56bc7e8e816bf0d4cf6997f043f2a3 = L.map(
+                "map_8a56bc7e8e816bf0d4cf6997f043f2a3",
+                {
+                    center: [12.9141417, 74.8559568],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_967da41f4a8b82578a2fdec0ff67b49e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_967da41f4a8b82578a2fdec0ff67b49e.addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var marker_94be301cdf7bac3a2e7cae5988f40e46 = L.marker(
+                [12.9141417, 74.8559568],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_f1a873edda437e672e2e60cc43d15086 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_94be301cdf7bac3a2e7cae5988f40e46.setIcon(icon_f1a873edda437e672e2e60cc43d15086);
+        
+    
+        var popup_ca8659fa7f682b7d37b0d56b354f8a4a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32bbabd8c831c2949596f5d9105a96c8 = $(`<div id="html_32bbabd8c831c2949596f5d9105a96c8" style="width: 100.0%; height: 100.0%;">Mangalore Port, Distance: 14.23 km</div>`)[0];
+                popup_ca8659fa7f682b7d37b0d56b354f8a4a.setContent(html_32bbabd8c831c2949596f5d9105a96c8);
+            
+        
+
+        marker_94be301cdf7bac3a2e7cae5988f40e46.bindPopup(popup_ca8659fa7f682b7d37b0d56b354f8a4a)
+        ;
+
+        
+    
+    
+            var marker_ff9aafde11170268b7ab94cc2c42d69e = L.marker(
+                [12.9141417, 74.8559568],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_74df6a6ae2d1cbb6cb9277da5101cb50 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ff9aafde11170268b7ab94cc2c42d69e.setIcon(icon_74df6a6ae2d1cbb6cb9277da5101cb50);
+        
+    
+        var popup_687c3288da4ed5d673c9bb287bd87077 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be70558e47bbdde05649c3f526cf1e3e = $(`<div id="html_be70558e47bbdde05649c3f526cf1e3e" style="width: 100.0%; height: 100.0%;">Mangalore Fisheries Harbour, Distance: 14.23 km</div>`)[0];
+                popup_687c3288da4ed5d673c9bb287bd87077.setContent(html_be70558e47bbdde05649c3f526cf1e3e);
+            
+        
+
+        marker_ff9aafde11170268b7ab94cc2c42d69e.bindPopup(popup_687c3288da4ed5d673c9bb287bd87077)
+        ;
+
+        
+    
+    
+            var marker_0ccdff4fbc16e164f80e3887927aa825 = L.marker(
+                [12.9150977, 74.8116324],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_aad7c141849eaeb0a1dbaad639817628 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0ccdff4fbc16e164f80e3887927aa825.setIcon(icon_aad7c141849eaeb0a1dbaad639817628);
+        
+    
+        var popup_3294a9b7da5d92b0660f63dcc75e6fbd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ab1d8089dfd8991bdf3594cd299ea15 = $(`<div id="html_6ab1d8089dfd8991bdf3594cd299ea15" style="width: 100.0%; height: 100.0%;">Kodi Fishing Harbour, Distance: 15.03 km</div>`)[0];
+                popup_3294a9b7da5d92b0660f63dcc75e6fbd.setContent(html_6ab1d8089dfd8991bdf3594cd299ea15);
+            
+        
+
+        marker_0ccdff4fbc16e164f80e3887927aa825.bindPopup(popup_3294a9b7da5d92b0660f63dcc75e6fbd)
+        ;
+
+        
+    
+    
+            var marker_5f5a45d05ce2fb2ac28e7e5874ac1d1e = L.marker(
+                [12.9012483, 75.0412305],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_3cc7f7c7b707d99ba5e7b4cec5aac095 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5f5a45d05ce2fb2ac28e7e5874ac1d1e.setIcon(icon_3cc7f7c7b707d99ba5e7b4cec5aac095);
+        
+    
+        var popup_0f5ca70e5913fe3ba3f492995e8f40f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3767eb92fad32ce9b2a1e04655d442cb = $(`<div id="html_3767eb92fad32ce9b2a1e04655d442cb" style="width: 100.0%; height: 100.0%;">River Varahi, Distance: 24.04 km</div>`)[0];
+                popup_0f5ca70e5913fe3ba3f492995e8f40f5.setContent(html_3767eb92fad32ce9b2a1e04655d442cb);
+            
+        
+
+        marker_5f5a45d05ce2fb2ac28e7e5874ac1d1e.bindPopup(popup_0f5ca70e5913fe3ba3f492995e8f40f5)
+        ;
+
+        
+    
+    
+            var marker_e03bd397b6f6a745c1820a0521d5998b = L.marker(
+                [13.035985, 74.7871011],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_a16600ee348e9256044f883f00374275 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e03bd397b6f6a745c1820a0521d5998b.setIcon(icon_a16600ee348e9256044f883f00374275);
+        
+    
+        var popup_d4746b48d4f84b0dcda9c37d5a69c756 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b475db304d3de999f4bbdd95ca73247 = $(`<div id="html_3b475db304d3de999f4bbdd95ca73247" style="width: 100.0%; height: 100.0%;">River Nandini, Distance: 28.69 km</div>`)[0];
+                popup_d4746b48d4f84b0dcda9c37d5a69c756.setContent(html_3b475db304d3de999f4bbdd95ca73247);
+            
+        
+
+        marker_e03bd397b6f6a745c1820a0521d5998b.bindPopup(popup_d4746b48d4f84b0dcda9c37d5a69c756)
+        ;
+
+        
+    
+    
+            var marker_7e75edd07c78feb459a98ec889ff7203 = L.marker(
+                [13.072027, 74.798373],
+                {}
+            ).addTo(map_8a56bc7e8e816bf0d4cf6997f043f2a3);
+        
+    
+            var icon_c8765a9a0c5da68bb6eaefdba8439546 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7e75edd07c78feb459a98ec889ff7203.setIcon(icon_c8765a9a0c5da68bb6eaefdba8439546);
+        
+    
+        var popup_d754b679ff0616d20e4a8d0fc4fa3a72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44b3f6bddb50714d8615035dd60ca3e0 = $(`<div id="html_44b3f6bddb50714d8615035dd60ca3e0" style="width: 100.0%; height: 100.0%;">Mulki Fishing Harbour, Distance: 32.34 km</div>`)[0];
+                popup_d754b679ff0616d20e4a8d0fc4fa3a72.setContent(html_44b3f6bddb50714d8615035dd60ca3e0);
+            
+        
+
+        marker_7e75edd07c78feb459a98ec889ff7203.bindPopup(popup_d754b679ff0616d20e4a8d0fc4fa3a72)
+        ;
+
+        
+    
+</script>
+</html>
