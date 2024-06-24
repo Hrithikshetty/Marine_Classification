@@ -100,6 +100,7 @@ export default function Register() {
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <Input
+                  placeholder="Password"
                   className="bg-white text-white"
                   id="password"
                   placeholder="Enter your password"

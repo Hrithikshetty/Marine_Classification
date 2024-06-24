@@ -79,6 +79,7 @@ export default function Component() {
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
+                  className="bg-white text-white "
                   className="bg-white text-white"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
