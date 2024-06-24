@@ -80,6 +80,7 @@ export default function Component() {
                 <Input
                   id="password"
                   className="bg-white text-white "
+                  className="bg-white text-white"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
@@ -91,7 +92,7 @@ export default function Component() {
                 className="w-full bg-white text-black"
                 disabled={isLoading}
               >
-                {isLoading ? "Signing Up..." : "Sign Up"}
+                {isLoading ? "Signing In..." : "Sign In"}
               </Button>
               
               <div className="w-full flex items-center justify-center">

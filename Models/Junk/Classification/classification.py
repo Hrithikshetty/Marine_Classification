@@ -11,8 +11,6 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-
-
 model = load_model('C:\\Users\\mbala\\OneDrive\\Desktop\\Marine_Classification\\Models\\Classification\\marine_model.h5')
 
 class_names = ['Bangus', 'Big Head Carp', 'Black Spotted Barb', 'Catfish', 'Climbing Perch', 'Fourfinger Threadfin', 'Fresherwater Eel', 'Glass Perchlet', 'Goby', 

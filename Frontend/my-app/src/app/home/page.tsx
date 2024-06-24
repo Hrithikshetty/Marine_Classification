@@ -141,16 +141,20 @@ export default function HomePage() {
               </label>
               <Input
        className="w-full  flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
+
+                className="w-full flex items-center justify-center border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950"
                 id="homepage-email"
                 placeholder="Enter your email"
                 type="email"
               />
               <Button className="bg-black border-white text-white w-20 h-29 hover:bg-white hover:text-black" variant="outline" size="sm">
 
+
                 Sign Up
 
               Subscribe
 
+                Sign Up
               </Button>
             </div>
           </div>

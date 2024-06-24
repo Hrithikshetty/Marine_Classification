@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternate Route</title>
+</head>
+<body>
+    <h1>Alternate Route Finder</h1>
+    <form method="post">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <br>
+        <label for="fish_species">Fish Species:</label>
+        <input type="text" id="fish_species" name="fish_species" required>
+        <br>
+        <input type="submit" value="Find Routes">
+    </form>
+
+    {% if nearest_places %}
+        <h2>Nearest Places</h2>
+        <ul>
+        {% for place in nearest_places %}
+            <li>{{ place[0] }} - {{ place[1]|round(2) }} km</li>
+        {% endfor %}
+        </ul>
+        <h2>Map</h2>
+        {% if map_path %}
+            <iframe src="{{ url_for('static', filename='maps/' ~ map_path.split('/')[-1]) }}" width="600" height="450"></iframe>
+            <br>
+            <a href="{{ url_for('static', filename='maps/' ~ map_path.split('/')[-1]) }}" download>Download Map</a>
+        {% else %}
+            <p>No map available.</p>
+        {% endif %}
+    {% elif message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

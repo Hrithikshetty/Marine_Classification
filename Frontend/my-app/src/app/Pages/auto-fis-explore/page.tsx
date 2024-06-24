@@ -146,6 +146,11 @@ export default function ImageAnalyzerPage() {
         </div>
       </div>
     </>
+    <div className="text-2xl font-bold">
+      {/* <iframe src="http://localhost:8501/" width="100%" height="745px" ></iframe> */}
+      {/* <iframe src="http://127.0.0.1:50603/" width="800" height="600"></iframe> */}
+      <iframe src="http://localhost:8501/" width="100%" height="930px" ></iframe>
+    </div>
   );
 }
 
